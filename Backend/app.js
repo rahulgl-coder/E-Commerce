@@ -15,7 +15,7 @@ db()
 
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://e-commerce-5-kdu1.onrender.com",
     credentials: true
   }));
 app.use(express.json());
