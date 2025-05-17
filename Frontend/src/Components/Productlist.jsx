@@ -23,7 +23,7 @@ export default function Productlist() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/products');
+        const res = await axios.get(`${import.meta.env.API_URL}/api/auth/products`);
         setProduct(res.data.product);
         setProducts(res.data.product);
       } catch (err) {
