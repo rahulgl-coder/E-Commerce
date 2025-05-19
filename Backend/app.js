@@ -15,8 +15,8 @@ db()
 
 
 const allowedOrigins = [
-  "https://e-commerce-5-kdu1.onrender.com",
-  "http://localhost:5173"
+  "https://e-commerce-frontend-edby.onrender.com",
+  "http://localhost:5173",
 ];
 
 app.use(cors({
