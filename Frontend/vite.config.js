@@ -8,6 +8,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: parseInt(process.env.PORT) || 5173,
-    allowedHosts: ['e-commerce-5-kdu1.onrender.com'] // ✅ Add your Render domain here
+    allowedHosts: ['e-commerce-frontend-edby.onrender.com']
   }
 })
