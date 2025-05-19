@@ -8,6 +8,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: parseInt(process.env.PORT) || 5173,
-    allowedHosts: ['e-commerce-frontend-edby.onrender.com']
+    allowedHosts: 'all' // ✅ Let it access any external host
   }
 })
