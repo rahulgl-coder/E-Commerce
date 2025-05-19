@@ -14,10 +14,27 @@ db()
 
 
 
+const allowedOrigins = [
+  "https://e-commerce-5-kdu1.onrender.com",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-    origin: "https://e-commerce-5-kdu1.onrender.com",
-    credentials: true
-  }));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
+
+// app.use(cors({
+//     origin: "https://e-commerce-5-kdu1.onrender.com"||http://localhost:5173/,
+//     credentials: true
+//   }));
 app.use(express.json());
 
 
