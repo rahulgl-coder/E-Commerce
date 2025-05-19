@@ -17,13 +17,14 @@ export default function Productlist() {
   const [startIndex, setStartIndex] = useState(0);
 
   const itemsPerPage = 4;
-  const totalPages = Math.ceil(product.length / itemsPerPage);
+  
   const trackRef = useRef(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.API_URL}/api/auth/products`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/products`);
+
         setProduct(res.data.product);
         setProducts(res.data.product);
       } catch (err) {
@@ -33,6 +34,7 @@ export default function Productlist() {
     fetchProducts();
   }, [user]);
 
+  const totalPages = Math.ceil(product.length / itemsPerPage);
   const handleNext = () => {
     if (startIndex + itemsPerPage < product.length) {
       setStartIndex(startIndex + itemsPerPage);
